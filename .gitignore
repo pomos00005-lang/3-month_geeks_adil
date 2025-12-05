@@ -1,0 +1,40 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.venv/
+env/
+venv/
+*.env
+
+# Logs
+*.log
+*.sqlite3
+
+# ----------------------------
+# Flet / GUI / build
+# ----------------------------
+.flet/
+.flet_packages/
+*.db
+*.db-shm
+*.db-wal
+
+# ----------------------------
+# IDE / Editor
+# ----------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ----------------------------
+# OS files
+# ----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
