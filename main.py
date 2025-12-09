@@ -50,9 +50,33 @@ def main(page: ft.Page):
 
     # page.add(greeting_text, name_input, button_text, history_text )
 
+    '''ДОБОВЛЕНИЕ КНОПОК'''
+
+    def sort_list(_):
+        history_text.value = "История приветствий:\n" + '\n'.join(sorted(greeting_history)[::-1])
+        page.update()
+
+    def del_last_name(_):
+        if len(greeting_history):
+            greeting_history.pop(-1)
+            history_text.value = "История приветствий:\n" + '\n'.join(greeting_history)
+            print(greeting_history)
+            
+        else:
+            history_text.value = "История приветствий:"
+        page.update()
+
+
+
+    sort_button = ft.ElevatedButton(text='Отсортировать список',on_click=sort_list)
+    
+    del_button = ft.ElevatedButton(text='Удалить последнее приветствие',on_click=del_last_name)
+        
+
+
     view_greeting_text = ft.Row([greeting_text], alignment=ft.MainAxisAlignment.CENTER)
 
-    page.add(view_greeting_text, ft.Row([name_input, button_elevated, clear_button]), history_text)
+    page.add(view_greeting_text, ft.Row([name_input, button_elevated, clear_button]), history_text,sort_button,del_button)
 
 
 ft.app(target=main)
