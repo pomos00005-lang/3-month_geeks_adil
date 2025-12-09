@@ -76,7 +76,7 @@ def main(page: ft.Page):
 
     view_greeting_text = ft.Row([greeting_text], alignment=ft.MainAxisAlignment.CENTER)
 
-    page.add(view_greeting_text, ft.Row([name_input, button_elevated, clear_button]), history_text,sort_button,del_button)
+    page.add(view_greeting_text, ft.Row([name_input, button_elevated, clear_button]), history_text,ft.Row([sort_button,del_button]))
 
 
 ft.app(target=main)
